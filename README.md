@@ -75,3 +75,11 @@ You can customize the server behavior by using middleware or by modifying the `d
 ## Conclusion
 
 `json-server` is a great tool for developers looking to quickly set up a mock API for testing and development purposes. For more information, visit the [json-server GitHub repository](https://github.com/typicode/json-server).
+
+### Start Command
+
+The command to start your app with each deploy using Cargo is:
+
+```bash
+cargo run
+```
