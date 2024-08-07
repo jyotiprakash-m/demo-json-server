@@ -42,19 +42,31 @@ npx json-server db.json --port 4000
 
 ## API Endpoints
 
-- **GET /posts**: Retrieve all posts
-- **GET /posts/:id**: Retrieve a single post by ID
-- **POST /posts**: Create a new post
-- **PUT /posts/:id**: Update an existing post
-- **DELETE /posts/:id**: Delete a post
+### Posts
 
-- **GET /comments**: Retrieve all comments
-- **GET /comments/:id**: Retrieve a single comment by ID
-- **POST /comments**: Create a new comment
-- **PUT /comments/:id**: Update an existing comment
-- **DELETE /comments/:id**: Delete a comment
+#### API Endpoints
 
-- **GET /profile**: Retrieve profile information
+- **_GET /posts_**: Retrieve all posts
+- **_GET /posts/:id_**: Retrieve a single post by ID
+- **_POST /posts_**: Create a new post
+- **_PUT /posts/:id_**: Update an existing post
+- **_DELETE /posts/:id_**: Delete a post
+
+### Comments
+
+#### API Endpoints
+
+- **_GET /comments_**: Retrieve all comments
+- **_GET /comments/:id_**: Retrieve a single comment by ID
+- **_POST /comments_**: Create a new comment
+- **_PUT /comments/:id_**: Update an existing comment
+- **_DELETE /comments/:id_**: Delete a comment
+
+### Profile
+
+#### API Endpoints
+
+- **_GET /profile_**: Retrieve profile information
 
 ## Customization
 
