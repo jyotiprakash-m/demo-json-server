@@ -18,17 +18,73 @@ npm install -g json-server
 
 ```json
 {
-  "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 }
+  "users": [
+    {
+      "id": 1,
+      "username": "johndoe",
+      "email": "johndoe@example.com",
+      "password": "password123",
+      "first_name": "John",
+      "last_name": "Doe",
+      "created_at": "2024-08-07T12:00:00Z"
+    }
   ],
-  "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+  "recipes": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "title": "Spaghetti Bolognese",
+      "description": "A classic Italian pasta dish.",
+      "prep_time": 15,
+      "cook_time": 30,
+      "total_time": 45,
+      "servings": 4,
+      "category_id": 1,
+      "created_at": "2024-08-07T12:00:00Z",
+      "updated_at": "2024-08-07T12:00:00Z"
+    }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "ingredients": [
+    { "id": 1, "name": "Spaghetti" },
+    { "id": 2, "name": "Ground Beef" },
+    { "id": 3, "name": "Tomato Sauce" }
+  ],
+  "recipeIngredients": [
+    { "id": 1, "recipe_id": 1, "ingredient_id": 1, "amount": "200g" },
+    { "id": 2, "recipe_id": 1, "ingredient_id": 2, "amount": "500g" },
+    { "id": 3, "recipe_id": 1, "ingredient_id": 3, "amount": "300ml" }
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "recipe_id": 1,
+      "step_number": 1,
+      "instruction": "Cook the spaghetti according to the package instructions."
+    },
+    {
+      "id": 2,
+      "recipe_id": 1,
+      "step_number": 2,
+      "instruction": "In a separate pan, cook the ground beef until browned."
+    },
+    {
+      "id": 3,
+      "recipe_id": 1,
+      "step_number": 3,
+      "instruction": "Add the tomato sauce to the beef and simmer for 10 minutes."
+    }
+  ],
+  "categories": [{ "id": 1, "name": "Dinner" }],
+  "reviews": [
+    {
+      "id": 1,
+      "recipe_id": 1,
+      "user_id": 1,
+      "rating": 5,
+      "comment": "Delicious and easy to make!",
+      "created_at": "2024-08-07T12:00:00Z"
+    }
+  ]
 }
 ```
 
@@ -42,31 +98,75 @@ npx json-server db.json --port 4000
 
 ## API Endpoints
 
-### Posts
+### Users
 
 #### API Endpoints
 
-- **_GET /posts_**: Retrieve all posts
-- **_GET /posts/:id_**: Retrieve a single post by ID
-- **_POST /posts_**: Create a new post
-- **_PUT /posts/:id_**: Update an existing post
-- **_DELETE /posts/:id_**: Delete a post
+- **_GET /users_**: Retrieve all users
+- **_GET /users/:id_**: Retrieve a single user by ID
+- **_POST /users_**: Create a new user
+- **_PUT /users/:id_**: Update an existing user
+- **_DELETE /users/:id_**: Delete a user
 
-### Comments
-
-#### API Endpoints
-
-- **_GET /comments_**: Retrieve all comments
-- **_GET /comments/:id_**: Retrieve a single comment by ID
-- **_POST /comments_**: Create a new comment
-- **_PUT /comments/:id_**: Update an existing comment
-- **_DELETE /comments/:id_**: Delete a comment
-
-### Profile
+### Recipes
 
 #### API Endpoints
 
-- **_GET /profile_**: Retrieve profile information
+- **_GET /recipes_**: Retrieve all recipes
+- **_GET /recipes/:id_**: Retrieve a single recipe by ID
+- **_POST /recipes_**: Create a new recipe
+- **_PUT /recipes/:id_**: Update an existing recipe
+- **_DELETE /recipes/:id_**: Delete a recipe
+
+### Ingredients
+
+#### API Endpoints
+
+- **_GET /ingredients_**: Retrieve all ingredients
+- **_GET /ingredients/:id_**: Retrieve a single ingredient by ID
+- **_POST /ingredients_**: Create a new ingredient
+- **_PUT /ingredients/:id_**: Update an existing ingredient
+- **_DELETE /ingredients/:id_**: Delete an ingredient
+
+### Recipe Ingredients
+
+#### API Endpoints
+
+- **_GET /recipeIngredients_**: Retrieve all recipe ingredients
+- **_GET /recipeIngredients/:id_**: Retrieve a single recipe ingredient by ID
+- **_POST /recipeIngredients_**: Create a new recipe ingredient
+- **_PUT /recipeIngredients/:id_**: Update an existing recipe ingredient
+- **_DELETE /recipeIngredients/:id_**: Delete a recipe ingredient
+
+### Steps
+
+#### API Endpoints
+
+- **_GET /steps_**: Retrieve all steps
+- **_GET /steps/:id_**: Retrieve a single step by ID
+- **_POST /steps_**: Create a new step
+- **_PUT /steps/:id_**: Update an existing step
+- **_DELETE /steps/:id_**: Delete a step
+
+### Categories
+
+#### API Endpoints
+
+- **_GET /categories_**: Retrieve all categories
+- **_GET /categories/:id_**: Retrieve a single category by ID
+- **_POST /categories_**: Create a new category
+- **_PUT /categories/:id_**: Update an existing category
+- **_DELETE /categories/:id_**: Delete a category
+
+### Reviews
+
+#### API Endpoints
+
+- **_GET /reviews_**: Retrieve all reviews
+- **_GET /reviews/:id_**: Retrieve a single review by ID
+- **_POST /reviews_**: Create a new review
+- **_PUT /reviews/:id_**: Update an existing review
+- **_DELETE /reviews/:id_**: Delete a review
 
 ## Customization
 
